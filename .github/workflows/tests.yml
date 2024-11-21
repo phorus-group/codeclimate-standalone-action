@@ -42,3 +42,16 @@ jobs:
           path: |
             codeclimate-report.json
             codeclimate-report.html
+
+  enforce-all-checks:
+    name: Enforce all checks
+    needs: [code-quality-advanced,code-quality-basic]
+    runs-on: ubuntu-latest
+    permissions:
+      checks: read
+    steps:
+      - name: Enforce all checks
+        uses: poseidon/wait-for-status-checks@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ignore: Enforce all checks
