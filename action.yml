@@ -80,13 +80,13 @@ runs:
 
         # We need to run engines:install before analyze to avoid hitting timeout errors.
         # See: https://github.com/codeclimate/codeclimate/issues/866#issuecomment-418758879
-        echo "#### INSTALLING ENGINES ####"
+        echo "#### INSTALLING ENGINES... ####"
         docker run \
           --env CODECLIMATE_CODE="$PWD" \
           --volume "$PWD":/code \
           --volume /var/run/docker.sock:/var/run/docker.sock \
           --volume /tmp/cc:/tmp/cc \
-          codeclimate/codeclimate --no-check-version engines:install
+          codeclimate/codeclimate --no-check-version engines:install > /dev/null
 
         # Run once for JSON output
         echo "#### INITIAL RUN ####"
