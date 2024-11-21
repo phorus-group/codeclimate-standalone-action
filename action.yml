@@ -75,7 +75,7 @@ runs:
           echo "::warning::No configuration found, using Code Climate's default configuration"
         fi
 
-        echo "#### PULLING IMAGE ####"
+        echo "#### PULLING IMAGE... ####"
         docker pull codeclimate/codeclimate > /dev/null
 
         # We need to run engines:install before analyze to avoid hitting timeout errors.
@@ -86,7 +86,7 @@ runs:
           --volume "$PWD":/code \
           --volume /var/run/docker.sock:/var/run/docker.sock \
           --volume /tmp/cc:/tmp/cc \
-          codeclimate/codeclimate --no-check-version engines:install > /dev/null
+          codeclimate/codeclimate --no-check-version engines:install
 
         # Run once for JSON output
         echo "#### INITIAL RUN ####"
