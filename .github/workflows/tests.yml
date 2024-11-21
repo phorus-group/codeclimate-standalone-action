@@ -2,7 +2,6 @@ name: Tests
 on: push
 
 jobs:
-  # <---------------- TEST BASIC CONFIG ------------------>
   code-quality-basic:
     name: Basic
     runs-on: ubuntu-latest
@@ -19,7 +18,7 @@ jobs:
           path: |
             codeclimate-report.json
             codeclimate-report.html
-  # <--------------- TEST ADVANCED CONFIG ---------------->
+
   code-quality-advanced:
     name: Advanced
     runs-on: ubuntu-latest
