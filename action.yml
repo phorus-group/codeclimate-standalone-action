@@ -139,6 +139,7 @@ runs:
           # Run for HTML output
           echo "#### GENERATING HTML VERSION ####"
           rm -rf raw.json
+          rm -rf codeclimate-report.json
           docker run \
             --env CODECLIMATE_CODE="$PWD" \
             --volume "$PWD":/code \
