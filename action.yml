@@ -16,23 +16,23 @@ inputs:
   info_threshold:
     description: "The number of findings of this severity allowed before the job returns a failure"
     required: false
-    default: "0"
+    default: 0
   minor_threshold:
     description: "The number of findings of this severity allowed before the job returns a failure"
     required: false
-    default: "0"
+    default: 0
   major_threshold:
     description: "The number of findings of this severity allowed before the job returns a failure"
     required: false
-    default: "0"
+    default: 0
   critical_threshold:
     description: "The number of findings of this severity allowed before the job returns a failure"
     required: false
-    default: "0"
+    default: 0
   blocker_threshold:
     description: "The number of findings of this severity allowed before the job returns a failure"
     required: false
-    default: "0"
+    default: 0
 outputs:
   info_findings:
     description: "The number of findings of severity INFO"
